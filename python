@@ -1,0 +1,77 @@
+def sieve(limit):
+    """
+    Implements the Sieve of Atkin to generate primes up to a given limit.
+    Returns a list of primes.
+    """
+    if limit < 2:
+        return []
+
+    # Initialize the sieve list
+    sieve = [False] * (limit + 1)
+
+    # Sieve of Atkin specific rules
+    for x in range(1, int(limit**0.5) + 1):
+        for y in range(1, int(limit**0.5) + 1):
+            # Rule 1
+            n = 4 * x**2 + y**2
+            if n <= limit and (n % 12 == 1 or n % 12 == 5):
+                sieve[n] = not sieve[n]
+
+            # Rule 2
+            n = 3 * x**2 + y**2
+            if n <= limit and n % 12 == 7:
+                sieve[n] = not sieve[n]
+
+            # Rule 3
+            n = 3 * x**2 - y**2
+            if x > y and n <= limit and n % 12 == 11:
+                sieve[n] = not sieve[n]
+
+    # Mark all multiples of squares as non-prime
+    for r in range(5, int(limit**0.5) + 1):
+        if sieve[r]:
+            for i in range(r**2, limit + 1, r**2):
+                sieve[i] = False
+
+    # Add 2 and 3 as known primes and extract others
+    primes = [2, 3] + [n for n in range(5, limit + 1) if sieve[n]]
+    return primes
+
+
+def pick_prime(primes, min_size=1000):
+    """
+    Picks the smallest prime greater than or equal to `min_size` from a list of primes.
+    """
+    for prime in primes:
+        if prime >= min_size:
+            return prime
+    # If no prime large enough exists, use the largest one in the list
+    return primes[-1]
+
+
+def hash(string, modulus):
+    """
+    Implements polynomial rolling hash for strings.
+    """
+    hash_value = 5381  # Starting value for the hash
+    for char in string:
+        # Hash = (hash * 33) XOR ord(char)
+        hash_value = ((hash_value << 5) + hash_value) ^ ord(char)
+    return hash_value % modulus
+
+
+if __name__ == "__main__":
+    # Generate a list of primes up to a specified limit
+    primes = sieve(10000)  # Modify the limit as needed
+
+    # Select a prime number to use as the modulus
+    modulus = pick_prime(primes, 1000)
+
+    # Test hashing function with example strings
+    test_array = ["alpha", "beta", "gamma", "delta", "epsilon"]
+
+    for string in test_array:
+        hash_value = hash(string, modulus)
+        print(f"Hash of '{string}' is {hash_value}")
+
+
