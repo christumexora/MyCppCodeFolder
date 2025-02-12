@@ -1,4 +1,10 @@
 #include <iostream>
+#include <vector>
+#include <list>
+#include <stack>
+#include <queue>
+#include <deque>
+#include <set>
 using namespace std;
 
 /*
@@ -547,7 +553,7 @@ int main() {
   cout << myObj.speed(200) << "\n"; // Call the method with an argument
   return 0;
 }
-*/
+
 
 
 
@@ -575,4 +581,139 @@ int main() {
   myObj.setSalary(50000);
   cout << myObj.getSalary() << "\n";
   return 0;
+}
+*/
+
+
+
+int main(){
+// DATA_STRUCTURES
+
+// VECTORS (RESIZABLE ARRAYS)......
+
+//MANIPULATING VECTORS
+
+// Create a vector called cars that will store strings
+vector<string> cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Get the second element
+cout << cars[1] << "\n";  // Outputs Volvo
+
+// Get the second element..........THIS IS PREFARABLE SO AS TO CHECK FOR ERRORS EASILY
+cout << cars.at(1) << "\n";
+
+// Get the first element
+cout << cars.front() << "\n";
+
+// Get the last element
+cout << cars.back() << "\n\n\n";
+
+// Add Vector Elements
+cars.push_back("Tesla");
+cars.push_back("VW");
+cars.push_back("Mitsubishi");
+cars.push_back("Mini");
+
+// Remove Vector Elements
+cars.pop_back();
+
+// Loop Through a Vector
+for (string car : cars){
+  cout << car << "\n";
+}
+
+// Print The Size of The Vector
+cout << cars.size() << "\n"; 
+
+// Checks If A Vector Is Empty
+cout << cars.empty() << "\n";   //OUTPUTS 1 IF EMPTY AND 0 IF NOT EMPTY
+
+
+
+
+//  LIST
+/* DIFFERENT BETWEEN LIST AND VECTOR..... VECTOR CAN'T ADD/DELETE AN ELEMENT 
+  TO THE FRONT BUT LIST CAN ADD/DELETE USING push_front/pop_front......
+  ALSO, LIST CANNOT ALTER OR CALL RANDOM ELEMENTS APART FROM THE FIRST AND LAST ELEMENTS
+
+// Change the value of the first element
+ cars.front() = "Opel";
+
+// Change the value of the last element
+ cars.back() = "Toyota";
+*/
+
+
+
+
+//  STACK
+
+/* A stack stores multiple elements in a specific order, called LIFO.
+
+LIFO stands for Last in, First Out. To vizualise LIFO, think of a pile of pancakes, 
+where pancakes are both added and removed from the top. So when removing a pancake, 
+it will always be the last one you added. This way of organizing elements is called 
+LIFO in computer science and programming.
+
+Unlike vectors, elements in the stack are not accessed by index numbers. Since 
+elements are added and removed from the top, you can only access the element 
+at the top of the stack.
+
+Note: The type of the stack (string in our example) cannot be changed after its been declared.
+
+Note: You cannot add elements to the stack at the time of declaration, like you can with vectors:
+*/
+
+
+// Create a stack of strings called cars
+stack<int> nums;
+
+// Add elements to the stack
+nums.push(15);
+nums.push(16);
+nums.push(17);
+nums.push(18);
+nums.push(19);
+nums.push(20);
+
+// Print the First Element of The Stack
+cout << nums.top() << "\n";
+
+
+
+
+
+//   C++ SET
+/*
+A set stores unique elements where they:
+
+Are sorted automatically in ascending order.
+Are unique, meaning equal or duplicate values are ignored.
+Can be added or removed, but the value of an existing element cannot be changed.
+Cannot be accessed by index numbers, because the order is based on sorting and not indexing.
+To use a set, you have to include the <set> header file:
+*/
+
+// Create a set called cars that will store strings
+set<string> vehicles;
+
+// Add Vector Elements
+vehicles.insert("Tesla");
+vehicles.insert("VW");
+vehicles.insert("Mitsubishi");
+vehicles.insert("Mini");
+vehicles.insert("Tesla");
+vehicles.insert("VW");
+vehicles.insert("Toyota");
+vehicles.insert("Audi");
+
+// Remove Vector Elements
+cars.erase("Audi");
+
+
+
+// Print set elements
+for (string vehicle : vehicles) {
+  cout << vehicle << "\n";
+}
 }
