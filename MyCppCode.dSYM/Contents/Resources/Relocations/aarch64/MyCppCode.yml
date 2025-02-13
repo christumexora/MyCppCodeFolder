@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/augustineaguworumba/MyCppCodeFolder/MyCppCode'
+binary-path:     '/Users/augustineaguworumba/Documents/GitHub/MyCppCodeFolder/MyCppCode'
 relocations:     []
 ...
