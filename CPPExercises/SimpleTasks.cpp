@@ -1,4 +1,12 @@
 #include <iostream>
+#include <vector>
+#include <list>
+#include <stack>
+#include <queue>
+#include <deque>
+#include <set>
+#include <map>
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -93,8 +101,51 @@ for(i = 0; i <= 20; i++){
 }*/
 
 
-//Create a program that finds the lowest age among different ages:
- int age[] = [10, 17, 5, 2, 7, 25];
+/*//Create a program that finds the lowest age among different ages:
+int arr[] = {10, 17, 5, 2, 7, 25};
+int lowestScore;
+int i;
+int size = sizeof(arr) / sizeof(arr[0]);
+for (int i : arr){
+if(i < lowestScore){
+    lowestScore = i;
+}
+}
+cout << lowestScore << " is the lowest age \n";*/
+
+
+/*Reverse First and Last Name
+Write a C++ program that accepts the user's first and last name 
+and prints them in reverse order with a space between them.
+
+string firstName;
+string lastName;
+cout << "Please, enter your first name: ";
+cin >> firstName; 
+cout << "Please, enter your last name: ";
+cin >> lastName; 
+string tempName;
+tempName = lastName;
+lastName = firstName;
+firstName = tempName;
+cout << "My reversed name is " << firstName << " " << lastName << endl;
+*/
+
+//String Manipulation Examples
+int n;
+cout << "Please, choose a number: ";
+cin >> n; 
+cout << "Please, choose another number: ";
+cin >> m; 
+int sum = 0;
+int i;
+for(i=0; i <= n; ++i){
+    sum +=i; 
+}
+cout << sum << "\n";
+
+
+
 return 0;
 }
 
