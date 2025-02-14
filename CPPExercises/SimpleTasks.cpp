@@ -63,6 +63,38 @@ switch (weekdayNumber) {
 }*/
 
 
+/*//Create a simple "countdown" program:
+int countDown = 3;
+while(countDown >= 0){
+    countDown--;
+    if(countDown == 0){
+        cout << "Let the match begin\n";
+    }
+}*/
+
+
+/*//Use a for loop to create a program that counts to 100 by tens:
+int multiplesOfTen = 0;
+for(multiplesOfTen = 0; multiplesOfTen <= 100; multiplesOfTen+=10){
+    cout << multiplesOfTen << "\n";
+}
+*/
+
+
+/*//Use a for loop to create a program that prints the multiplication table of a specified number (2 in this example):
+int number, i;     //Declare variables
+cout << "Choose a number: ";    //Choose random number
+cin >> number;  //Store the input
+//iterate between 0 and 20
+for(i = 0; i <= 20; i++){
+    //multiply values i and number
+   int product = number * i;
+   cout << number << " x " << i << " = " << product << "\n";
+}*/
+
+
+//Create a program that finds the lowest age among different ages:
+ int age[] = [10, 17, 5, 2, 7, 25];
 return 0;
 }
 
