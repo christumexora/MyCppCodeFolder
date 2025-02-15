@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+#include <list>
+#include <stack>
+#include <queue>
+#include <deque>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+int main{
+    string str;
+    cout << "Please choose any word: ";
+    cin >> str;
+    cout << "\n " << x;
+
+    return 0;
+}
