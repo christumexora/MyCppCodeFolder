@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <list>
 #include <stack>
@@ -9,11 +10,19 @@
 #include <algorithm>
 using namespace std;
 
-int main{
+int main(){
     string str;
     cout << "Please choose any word: ";
     cin >> str;
-    cout << "\n " << x;
 
+    char lastChar = str.back();
+    vector<char> charVec(str.begin(), str.end());
+    charVec.insert(charVec.begin(), lastChar);
+    charVec.push_back(lastChar);
+
+    for(char c : charVec){
+        cout << c;
+    }
+   cout << endl;
     return 0;
 }
