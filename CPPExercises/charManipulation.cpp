@@ -1,4 +1,3 @@
-using namespace std;
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,6 +8,7 @@ using namespace std;
 #include <set>
 #include <map>
 #include <algorithm>
+using namespace std;
 
 
 /*
