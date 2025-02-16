@@ -35,10 +35,15 @@ int main(){
     cout << "Please choose any word: ";
     cin >> str;
 
-    string firstThreeChar = str.substr(0, 3);;
+    // Get the first 3 characters
+    string firstThreeChar = str.substr(0, 3);
+    // Convert string to vector<char>
     vector<char> charVec(str.begin(), str.end());
+    // Add the first 3 characters at the front
     charVec.insert(charVec.begin(), firstThreeChar.begin(), firstThreeChar.end());
+    // Add the first 3 characters at the back
     charVec.insert(charVec.end(), firstThreeChar.begin(), firstThreeChar.end());
+    //Print the modified vector as a string
     for(char c : charVec){
         cout << c;
     }
